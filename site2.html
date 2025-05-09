@@ -1,0 +1,793 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protozen AI - Pioneering the Future with Code & Intelligence</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --dark: #0f172a;
+            --darker: #020617;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--darker);
+            color: #e2e8f0;
+            scroll-behavior: smooth;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #6366f1, #a855f7, #ec4899);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(15,23,42,0.9) 0%, rgba(2,6,23,0.95) 100%), 
+                        url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MDAiIGhlaWdodD0iNTAwIj48ZmlsdGVyIGlkPSJhIiB4PSIwIiB5PSIwIj48ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iLjA1IiBzdGl0Y2hUaWxlcz0ic3RpdGNoIi8+PGZlQ29sb3JNYXRyaXggdHlwZT0ic2F0dXJhdGUiIHZhbHVlcz0iMCIvPjwvZmlsdGVyPjxwYXRoIGZpbHRlcj0idXJsKCNhKSIgb3BhY2l0eT0iLjA1IiBkPSJNNTAgNTBINDY2VjQ2Nkg1MHoiLz48L3N2Zz4=');
+        }
+        
+        .service-card {
+            background: linear-gradient(145deg, #1e293b, #0f172a);
+            border: 1px solid rgba(99, 102, 241, 0.1);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(99, 102, 241, 0.1), 0 10px 10px -5px rgba(99, 102, 241, 0.04);
+            border-color: rgba(99, 102, 241, 0.3);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background: linear-gradient(90deg, #6366f1, #a855f7);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        .tech-icon {
+            font-size: 2.5rem;
+            margin: 0 0.5rem;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+        }
+        
+        .tech-icon:hover {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+        
+        .glow {
+            text-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+        }
+        
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, rgba(99, 102, 241, 0), rgba(99, 102, 241, 0.5), rgba(99, 102, 241, 0));
+        }
+        
+        input, textarea {
+            background-color: rgba(15, 23, 42, 0.7) !important;
+            border: 1px solid rgba(99, 102, 241, 0.3) !important;
+        }
+        
+        input:focus, textarea:focus {
+            border-color: var(--primary) !important;
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.3) !important;
+        }
+        
+        .badge {
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+        }
+        
+        .mobile-menu {
+            background: rgba(2, 6, 23, 0.95);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-gray-900/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <span class="text-2xl font-bold">
+                            <span class="gradient-text">Protozen</span><span class="text-white">AI</span>
+                        </span>
+                    </div>
+                </div>
+                <div class="hidden md:ml-6 md:flex md:items-center md:space-x-8">
+                    <a href="#" class="nav-link text-white px-3 py-2 text-sm font-medium">Home</a>
+                    <a href="#services" class="nav-link text-gray-300 hover:text-white px-3 py-2 text-sm font-medium">Services</a>
+                   
+                    <a href="#contact" class="nav-link text-gray-300 hover:text-white px-3 py-2 text-sm font-medium">Contact</a>
+                </div>
+                <div class="-mr-2 flex items-center md:hidden">
+                    <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none">
+                        <span class="sr-only">Open menu</span>
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div class="hidden mobile-menu md:hidden fixed inset-0 z-40 pt-16" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-800">Home</a>
+                <a href="#services" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800">Services</a>
+                <a href="#SEO" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800">SEO</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
+            <div class="md:flex items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                        Pioneering the Future with <span class="gradient-text">Code & Intelligence</span>
+                    </h1>
+                    <p class="text-xl mb-8 text-gray-300 max-w-lg">
+                        We build cutting-edge digital solutions that transform businesses and empower innovation through AI and automation.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#services" class="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-3 rounded-lg font-semibold text-lg transition duration-300 inline-flex items-center">
+                            Explore Our Services <i class="fas fa-arrow-down ml-2"></i>
+                        </a>
+                        <a href="#contact" class="border border-indigo-500 text-white px-8 py-3 rounded-lg font-semibold text-lg transition duration-300 inline-flex items-center hover:bg-indigo-900/30">
+                            Contact Us <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center animate-float">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2491/2491935.png" alt="AI Illustration" class="w-3/4 h-auto">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack -->
+    <div class="bg-gray-900 py-8 border-t border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-wrap justify-center items-center gap-6 md:gap-10">
+                <i class="devicon-react-original colored tech-icon" title="React"></i>
+                <i class="devicon-python-plain colored tech-icon" title="Python"></i>
+                <i class="devicon-tensorflow-original colored tech-icon" title="TensorFlow"></i>
+                <i class="devicon-pytorch-original colored tech-icon" title="PyTorch"></i>
+                <i class="devicon-javascript-plain colored tech-icon" title="JavaScript"></i>
+                <i class="devicon-nextjs-original colored tech-icon" title="Next.js"></i>
+                <i class="devicon-figma-plain colored tech-icon" title="Figma"></i>
+                <i class="devicon-langchain-plain colored tech-icon" title="LangChain"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section class="py-20 bg-gradient-to-b from-gray-900 to-gray-900/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">About <span class="gradient-text">Protozen AI</span></h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto"></div>
+            </div>
+            <div class="md:flex items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+                    <p class="text-lg text-gray-300 mb-6">
+                        Protozen AI is a forward-thinking technology company at the intersection of artificial intelligence and digital innovation. 
+                        We specialize in creating intelligent solutions that drive business growth and operational efficiency.
+                    </p>
+                    <p class="text-lg text-gray-300 mb-6">
+                        Our team of engineers, data scientists, and designers collaborate to build custom digital products that leverage the latest 
+                        advancements in AI, automation, and web technologies.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-gray-800/50 p-4 rounded-lg border border-gray-700">
+                            <div class="text-indigo-400 mb-2">
+                                <i class="fas fa-brain text-2xl"></i>
+                            </div>
+                            <h3 class="font-semibold text-white">AI First</h3>
+                            <p class="text-sm text-gray-400">Built with intelligence at the core</p>
+                        </div>
+                        <div class="bg-gray-800/50 p-4 rounded-lg border border-gray-700">
+                            <div class="text-indigo-400 mb-2">
+                                <i class="fas fa-bolt text-2xl"></i>
+                            </div>
+                            <h3 class="font-semibold text-white">Fast Execution</h3>
+                            <p class="text-sm text-gray-400">Rapid prototyping & deployment</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2 relative">
+                    <div class="relative">
+                        <div class="absolute -top-6 -left-6 w-32 h-32 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse"></div>
+                        <div class="absolute -bottom-8 -right-6 w-32 h-32 bg-indigo-500 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse"></div>
+                        <div class="relative bg-gray-800/50 border border-gray-700 rounded-xl p-6 backdrop-blur-sm">
+                            <div class="flex items-center mb-4">
+                                <div class="flex space-x-2">
+                                    <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                                    <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                                    <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                                </div>
+                                <div class="text-xs text-gray-400 ml-4">terminal</div>
+                            </div>
+                            <div class="font-mono text-sm text-gray-300">
+                                <div class="mb-2"><span class="text-green-400">$</span> <span class="text-purple-400">python</span> train_model.py</div>
+                                <div class="mb-2"><span class="text-gray-500">>></span> Initializing neural network...</div>
+                                <div class="mb-2"><span class="text-gray-500">>></span> Training on 1.2M samples...</div>
+                                <div class="mb-2"><span class="text-gray-500">>></span> Epoch 1/50 - Accuracy: 92.3%</div>
+                                <div class="mb-2"><span class="text-gray-500">>></span> Model saved to /models/production</div>
+                                <div class="text-green-400">✓</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Preview -->
+    <section id="services" class="py-20 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Our <span class="gradient-text">Services</span></h2>
+                <p class="text-xl text-gray-400 max-w-2xl mx-auto">Solutions designed to propel your business into the future</p>
+                <div class="w-20 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto mt-4"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Web Development -->
+                <div class="service-card p-8 rounded-xl">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-indigo-500/10 p-3 rounded-lg mr-4">
+                            <i class="fas fa-code text-indigo-400 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Web Development</h3>
+                    </div>
+                    <p class="text-gray-400 mb-6">
+                        Your online presence defines your brand. We build high-performance, SEO-optimized websites that turn visitors into customers.
+                    </p>
+                    <div class="flex flex-wrap gap-3 mb-6">
+                        <span class="badge px-3 py-1 rounded-full text-xs font-medium text-indigo-300">HTML</span>
+                        <span class="badge px-3 py-1 rounded-full text-xs font-medium text-indigo-300">CSS</span>
+                        <span class="badge px-3 py-1 rounded-full text-xs font-medium text-indigo-300">JavaScript</span>
+                        <span class="badge px-3 py-1 rounded-full text-xs font-medium text-indigo-300">React</span>
+                    </div>
+                    <a href="#web-development" class="text-indigo-400 hover:text-indigo-300 font-medium inline-flex items-center group">
+                        Know More <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+                
+                <!-- Custom AI Models -->
+                <div class="service-card p-8 rounded-xl">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-indigo-500/10 p-3 rounded-lg mr-4">
+                            <i class="fas fa-brain text-indigo-400 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Custom AI Models</h3>
+                    </div>
+                    <p class="text-gray-400 mb-6">
+                        We build AI that fits your business — not the other way around. Predictive, generative, and personalized AI systems built from scratch.
+                    </p>
+                    <div class="flex flex-wrap gap-3 mb-6">
+                        <span class="badge px-3 py-1 rounded-full text-xs font-medium text-indigo-300">Python</span>
+                        <span class="badge px-3 py-1 rounded-full text-xs font-medium text-indigo-300">TensorFlow</span>
+                        <span class="badge px-3 py-1 rounded-full text-xs font-medium text-indigo-300">PyTorch</span>
+                        <span class="badge px-3 py-1 rounded-full text-xs font-medium text-indigo-300">LLMs</span>
+                    </div>
+                    <a href="#custom-ai-models" class="text-indigo-400 hover:text-indigo-300 font-medium inline-flex items-center group">
+                        Know More <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+                
+                <!-- AI Automations -->
+                <div class="service-card p-8 rounded-xl">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-indigo-500/10 p-3 rounded-lg mr-4">
+                            <i class="fas fa-robot text-indigo-400 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">AI Automations</h3>
+                    </div>
+                    <p class="text-gray-400 mb-6">
+                        Scale smarter. We create AI-driven automations including content generation, customer support, and sales outreach.
+                    </p>
+                    <div class="mb-4">
+                        <ul class="space-y-2 text-gray-400">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-indigo-400 mt-1 mr-2 text-sm"></i>
+                                <span>AI Content Creators</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-indigo-400 mt-1 mr-2 text-sm"></i>
+                                <span>Customer Chatbots</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-indigo-400 mt-1 mr-2 text-sm"></i>
+                                <span>Cold Email/Call Bots</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-indigo-400 mt-1 mr-2 text-sm"></i>
+                                <span>Custom Integrations</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="#ai-automations" class="text-indigo-400 hover:text-indigo-300 font-medium inline-flex items-center group">
+                        Know More <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+                
+                <!-- SEO -->
+                <div id="SEO" class="service-card p-8 rounded-xl">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-indigo-500/10 p-3 rounded-lg mr-4">
+                            <i class="fas fa-graduation-cap text-indigo-400 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">SEO</h3>
+                    </div>
+                    <p class="text-gray-400 mb-6">
+                       Get seen by the world, generate more leads!
+                    </p>
+                    <div class="mb-4">
+                        <ul class="space-y-2 text-gray-400">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-indigo-400 mt-1 mr-2 text-sm"></i>
+                                <span>Search Rank Configuration</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-indigo-400 mt-1 mr-2 text-sm"></i>
+                                <span>SEO Strategies</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-indigo-400 mt-1 mr-2 text-sm"></i>
+                                <span>Better Visibility</span>
+                            </li>                        
+                        </ul>
+                    </div>
+                    </div>
+                    <a href="#SEO" class="text-indigo-400 hover:text-indigo-300 font-medium inline-flex items-center group">
+                        Know More <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Page Content (hidden by default) -->
+    <section id="services-page" class="hidden bg-gray-900 py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h1 class="text-4xl font-bold text-white mb-4">Our <span class="gradient-text">Services</span></h1>
+                <p class="text-xl text-gray-400 max-w-2xl mx-auto">Built for the future. Designed for you.</p>
+                <div class="w-20 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto mt-4"></div>
+            </div>
+            
+            <!-- Web Development Service -->
+            <div id="web-development" class="mb-20">
+                <div class="flex flex-col md:flex-row items-center mb-8 gap-12">
+                    <div class="md:w-1/2">
+                        <div class="flex items-center mb-6">
+                            <div class="bg-indigo-500/10 p-3 rounded-lg mr-4">
+                                <i class="fas fa-code text-indigo-400 text-2xl"></i>
+                            </div>
+                            <h2 class="text-2xl font-bold text-white">Web Development</h2>
+                        </div>
+                        <p class="text-gray-400 mb-6">
+                            Full-stack custom website design with emphasis on user experience, speed, and aesthetics. 
+                            We build responsive, scalable websites that convert visitors into customers.
+                        </p>
+                        <div class="bg-indigo-500/10 p-6 rounded-lg mb-6 border border-indigo-500/30">
+                            <h4 class="font-semibold text-indigo-300 mb-2">Why You Need It:</h4>
+                            <p class="text-white">
+                                "Not having a professional website as a business makes you invisible to the real world!"
+                            </p>
+                        </div>
+                        <div class="mb-8">
+                            <h4 class="font-semibold text-white mb-3">Tech Stack:</h4>
+                            <div class="flex flex-wrap gap-3">
+                                <span class="badge px-3 py-1 rounded-full text-xs font-medium text-indigo-300">HTML5</span>
+                                <span class="badge px-3 py-1 rounded-full text-xs font-medium text-indigo-300">CSS3</span>
+                                <span class="badge px-3 py-1 rounded-full text-xs font-medium text-indigo-300">JavaScript</span>
+                                <span class="badge px-3 py-1 rounded-full text-xs font-medium text-indigo-300">React</span>
+                                <span class="badge px-3 py-1 rounded-full text-xs font-medium text-indigo-300">Next.js</span>
+                                <span class="badge px-3 py-1 rounded-full text-xs font-medium text-indigo-300">Node.js</span>
+                                <span class="badge px-3 py-1 rounded-full text-xs font-medium text-indigo-300">Tailwind CSS</span>
+                            </div>
+                        </div>
+                        <a href="#contact" class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-lg font-medium transition duration-300 inline-flex items-center">
+                            Get Started <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                    
+                </div>
+                <div class="section-divider my-12"></div>
+            </div>
+            
+            <!-- Custom AI Models -->
+            <div id="custom-ai-models" class="mb-20">
+                <div class="flex flex-col md:flex-row items-center mb-8 gap-12">
+                    <div class="md:w-1/2 order-2 md:order-1">
+                        <div class="relative">
+                            <div class="absolute -top-6 -right-6 w-32 h-32 bg-indigo-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
+                        
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 order-1 md:order-2">
+                        <div class="flex items-center mb-6">
+                            <div class="bg-indigo-500/10 p-3 rounded-lg mr-4">
+                                <i class="fas fa-brain text-indigo-400 text-2xl"></i>
+                            </div>
+                            <h2 class="text-2xl font-bold text-white">Custom AI Models</h2>
+                        </div>
+                        <p class="text-gray-400 mb-6">
+                            Tailored machine learning models built with the latest frameworks to solve your specific business challenges. 
+                            From predictive analytics to computer vision, we create AI that works for you.
+                        </p>
+                        <div class="bg-indigo-500/10 p-6 rounded-lg mb-6 border border-indigo-500/30">
+                            <h4 class="font-semibold text-indigo-300 mb-2">Why You Need It:</h4>
+                            <p class="text-white">
+                                "Your data is unique. So should be your AI."
+                            </p>
+                        </div>
+                        <div class="mb-8">
+                            <h4 class="font-semibold text-white mb-3">Capabilities:</h4>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="flex items-start">
+                                    <i class="fas fa-check text-indigo-400 mt-1 mr-2"></i>
+                                    <span class="text-gray-300">Predictive Analytics</span>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-check text-indigo-400 mt-1 mr-2"></i>
+                                    <span class="text-gray-300">Computer Vision</span>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-check text-indigo-400 mt-1 mr-2"></i>
+                                    <span class="text-gray-300">Natural Language Processing</span>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-check text-indigo-400 mt-1 mr-2"></i>
+                                    <span class="text-gray-300">Generative AI</span>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-check text-indigo-400 mt-1 mr-2"></i>
+                                    <span class="text-gray-300">Recommendation Systems</span>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-check text-indigo-400 mt-1 mr-2"></i>
+                                    <span class="text-gray-300">Anomaly Detection</span>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#contact" class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-lg font-medium transition duration-300 inline-flex items-center">
+                            Get Started <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="section-divider my-12"></div>
+            </div>
+            
+            <!-- AI Automations -->
+            <div id="ai-automations" class="mb-20">
+                <div class="flex flex-col md:flex-row items-center mb-8 gap-12">
+                    <div class="md:w-1/2">
+                        <div class="flex items-center mb-6">
+                            <div class="bg-indigo-500/10 p-3 rounded-lg mr-4">
+                                <i class="fas fa-robot text-indigo-400 text-2xl"></i>
+                            </div>
+                            <h2 class="text-2xl font-bold text-white">AI Automations</h2>
+                        </div>
+                        <p class="text-gray-400 mb-6">
+                            We automate your operations with smart AI systems that handle repetitive tasks, engage customers, 
+                            and optimize workflows, freeing your team to focus on strategic initiatives.
+                        </p>
+                        <div class="bg-indigo-500/10 p-6 rounded-lg mb-6 border border-indigo-500/30">
+                            <h4 class="font-semibold text-indigo-300 mb-2">Why You Need It:</h4>
+                            <p class="text-white">
+                                "Ai does the 90% workload for HALF the COST. Handles everything seamlessly."
+                            </p>
+                        </div>
+                        <div class="mb-8">
+                            <h4 class="font-semibold text-white mb-3">Our Automation Solutions:</h4>
+                            <div class="space-y-4">
+                                <div class="flex items-start">
+                                    <div class="bg-indigo-500/10 p-2 rounded-lg mr-4">
+                                        <i class="fas fa-pen-fancy text-indigo-400"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="font-medium text-white">AI Content Creators</h5>
+                                        <p class="text-gray-400 text-sm">Generate blogs, social media captions, emails, and more with AI that understands your brand voice.</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="bg-indigo-500/10 p-2 rounded-lg mr-4">
+                                        <i class="fas fa-comments text-indigo-400"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="font-medium text-white">Chatbots</h5>
+                                        <p class="text-gray-400 text-sm">24/7 customer support bots that handle inquiries, bookings, and troubleshooting.</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="bg-indigo-500/10 p-2 rounded-lg mr-4">
+                                        <i class="fas fa-mail-bulk text-indigo-400"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="font-medium text-white">Cold Outreach</h5>
+                                        <p class="text-gray-400 text-sm">Email & call bots to boost sales with personalized, AI-driven outreach.</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="bg-indigo-500/10 p-2 rounded-lg mr-4">
+                                        <i class="fas fa-random text-indigo-400"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="font-medium text-white">Custom Automations</h5>
+                                        <p class="text-gray-400 text-sm">Slack, Notion, Zapier workflows tailored to your business processes.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#contact" class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-lg font-medium transition duration-300 inline-flex items-center">
+                            Get Started <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                    <div class="md:w-1/2">
+                        
+                    </div>
+                </div>
+                <div class="section-divider my-12"></div>
+            </div>
+            
+            <!-- SEO -->
+            <div id="SEO">
+                <div class="flex flex-col md:flex-row items-center mb-8 gap-12">
+                    <div class="md:w-1/2 order-2 md:order-1">
+                        
+                    </div>
+                    <div class="md:w-1/2 order-1 md:order-2">
+                        <div class="flex items-center mb-6">
+                            <div class="bg-indigo-500/10 p-3 rounded-lg mr-4">
+                                <i class="fas fa-graduation-cap text-indigo-400 text-2xl"></i>
+                            </div>
+                            <h2 class="text-2xl font-bold text-white">S.E.O - Search Engine Optimization</h2>
+                        </div>
+                        <p class="text-gray-400 mb-6">
+                            Our SEO service is designed to make sure your website gets found by the right people at the right time. We optimize everything from page speed and mobile responsiveness to keyword strategy and metadata, ensuring search engines prioritize your site. With our technical audits, backlink strategies, and on-page content optimization, we help drive organic traffic that actually converts. In today’s digital world, visibility is everything — and if you're not ranking on the first page, you're missing out on real business opportunities. Let us help you climb the search rankings and stay ahead of your competitors.
+                        </p>
+                        <div class="bg-indigo-500/10 p-6 rounded-lg mb-6 border border-indigo-500/30">
+                            <h4 class="font-semibold text-indigo-300 mb-2">Why It Matters:</h4>
+                            <p class="text-white">
+                                "We optimize your site structure, content, and speed to rank higher on Google and bring in more traffic."
+                            </p>
+                        </div>
+                        <a href="#contact" class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-lg font-medium transition duration-300 inline-flex items-center">
+                            Get Started <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-16">
+                <a href="#contact" class="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition duration-300 inline-flex items-center">
+                    Contact Us to Get Started <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer with Contact Form -->
+    <footer id="contact" class="bg-gray-900/80 border-t border-gray-800 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-bold text-white mb-6">Get In Touch</h3>
+                    <p class="text-gray-400 mb-8">
+                        Ready to transform your business with cutting-edge technology? 
+                        Contact us today to discuss your project or SEO opportunities.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <i class="fas fa-envelope text-indigo-400"></i>
+                            </div>
+                            <div class="ml-4">
+                                <p class="text-sm font-medium text-gray-300">Email</p>
+                                <p class="text-gray-400">contact@protozenai.com</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                <div>
+                    <h3 class="text-2xl font-bold text-white mb-6">Send Us a Message</h3>
+                    <form id="contact-form" class="space-y-4">
+                        <div id="form-message" class="hidden p-4 rounded-lg bg-green-900/30 border border-green-600 text-green-300"></div>
+                        
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-300 mb-1">Name *</label>
+                            <input type="text" id="name" name="name" required class="w-full px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-300 mb-1">Email *</label>
+                            <input type="email" id="email" name="email" required class="w-full px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-300 mb-1">Message *</label>
+                            <textarea id="message" name="message" rows="4" required class="w-full px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
+                        </div>
+                        
+                        <div>
+                            <button type="submit" id="submit-btn" disabled class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-lg font-medium transition duration-300 w-full disabled:opacity-50 disabled:cursor-not-allowed">
+                                Send Message
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <span class="text-2xl font-bold">
+                        <span class="gradient-text">Protozen</span><span class="text-white">AI</span>
+                    </span>
+                </div>
+                <div class="text-gray-400 text-sm">
+                    &copy; 2024 Protozen AI. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const menuButton = document.getElementById('mobile-menu-button');
+            const menu = document.getElementById('mobile-menu');
+            
+            if (!menu.contains(event.target) && event.target !== menuButton) {
+                menu.classList.add('hidden');
+            }
+        });
+
+        // Handle "Know More" button clicks to show services page
+        document.querySelectorAll('[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                // Check if it's a "Know More" button or similar
+                if(this.textContent.includes('Know More') || 
+                   this.textContent.includes('Explore Our Services') || 
+                   this.textContent.includes('Contact Us to Get Started') ||
+                   this.textContent.includes('Get Started') ||
+                   this.textContent.includes('Apply Now')) {
+                    e.preventDefault();
+                    
+                    // Show services page if not already visible
+                    if(this.getAttribute('href') !== '#contact') {
+                        document.getElementById('services-page').classList.remove('hidden');
+                    }
+                    
+                    // Scroll to the specific section
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    
+                    if(targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+
+        // Contact form validation
+        const contactForm = document.getElementById('contact-form');
+        const nameInput = document.getElementById('name');
+        const emailInput = document.getElementById('email');
+        const messageInput = document.getElementById('message');
+        const submitBtn = document.getElementById('submit-btn');
+        const formMessage = document.getElementById('form-message');
+
+        function validateForm() {
+            const nameValid = nameInput.value.trim() !== '';
+            const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value.trim());
+            const messageValid = messageInput.value.trim() !== '';
+            
+            submitBtn.disabled = !(nameValid && emailValid && messageValid);
+        }
+
+        nameInput.addEventListener('input', validateForm);
+        emailInput.addEventListener('input', validateForm);
+        messageInput.addEventListener('input', validateForm);
+
+        // Form submission
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Simulate form submission
+            formMessage.textContent = "Thank you for reaching out! We'll get back to you shortly.";
+            formMessage.classList.remove('hidden');
+            formMessage.scrollIntoView({ behavior: 'smooth' });
+            
+            // Reset form
+            contactForm.reset();
+            submitBtn.disabled = true;
+            
+            // Hide message after 5 seconds
+            setTimeout(() => {
+                formMessage.classList.add('hidden');
+            }, 5000);
+        });
+
+        // Animation on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.classList.add('animate-fadeIn');
+                }
+            });
+        }, {threshold: 0.1});
+
+        document.querySelectorAll('.service-card, .hero-gradient div').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
